@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Report Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>One Page Report Generator</h1>
+        <p>by Mohamad Adri bin Maili</p>
+    </header>
+
+    <main>
+        <form id="reportForm">
+            <label for="programName">Nama Program/Aktiviti:</label>
+            <input type="text" id="programName" name="programName" required>
+
+            <label for="date">Tarikh:</label>
+            <input type="text" id="date" name="date" placeholder="dd/mm/yyyy" required pattern="\d{2}/\d{2}/\d{4}">
+
+            <label for="time">Masa:</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="location">Tempat:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="targetAudience">Sasaran:</label>
+            <input type="text" id="targetAudience" name="targetAudience" required>
+
+            <label for="objectives">Objektif:</label>
+            <textarea id="objectives" name="objectives" rows="3" required></textarea>
+
+            <label for="activities">Aktiviti:</label>
+            <textarea id="activities" name="activities" rows="3" required></textarea>
+
+            <label for="strengths">Kekuatan:</label>
+            <textarea id="strengths" name="strengths" rows="3" required></textarea>
+
+            <label for="weaknesses">Kelemahan:</label>
+            <textarea id="weaknesses" name="weaknesses" rows="3" required></textarea>
+
+            <label for="images">Upload Gambar (Maks 4):</label>
+            <input type="file" id="images" name="images" accept="image/*" multiple required>
+
+            <label for="preparedBy">Disediakan oleh:</label>
+            <input type="text" id="preparedBy" name="preparedBy" required>
+
+            <label for="position">Jawatan:</label>
+            <input type="text" id="position" name="position" required>
+
+            <button type="submit">Jana OPR</button>
+        </form>
+
+        <div id="output"></div>
+        <button id="downloadPdfBtn" style="display: none;">Download PDF</button>
+    </main>
+
+    <footer>
+        <p>&copy; SK Stalon One Page Report Generator</p>
+    </footer>
+
+    <!-- Include html2pdf.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
