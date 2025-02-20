@@ -1,27 +1,25 @@
 /* General Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Updated font */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f4f8; /* Softer background color */
+    background-color: #f9f9f9;
     color: #333;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #0056b3; /* Darker blue for header */
+    background-color: #007bff;
     color: white;
-    border-bottom: 4px solid #003d80; /* Added border for emphasis */
 }
 
 main {
-    max-width: 800px; /* Slightly wider for better layout */
+    max-width: 794px; /* A4 width in pixels */
     margin: 20px auto;
     padding: 20px;
     background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 form {
@@ -35,7 +33,7 @@ label {
 }
 
 input, textarea, button {
-    padding: 12px; /* Increased padding for better touch targets */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
@@ -46,20 +44,18 @@ button {
     color: white;
     border: none;
     cursor: pointer;
- transition: background-color 0.3s; /* Smooth transition */
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker on hover */
+    background-color: #0056b3;
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #0056b3; /* Consistent footer color */
+    background-color: #007bff;
     color: white;
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Changed to relative */
     width: 100%;
 }
 
@@ -72,7 +68,8 @@ footer {
 }
 
 .image-grid img {
-    width: 100%; /* Fit within the grid cell */
+    width ```css
+    : 100%; /* Fit within the grid cell */
     height: 150px; /* Fixed height for consistency */
     object-fit: cover; /* Ensures images are resized proportionally */
     border: 1px solid #ccc;
