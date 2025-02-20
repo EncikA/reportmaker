@@ -12,7 +12,7 @@ function formatDateForOutput(inputDate) {
 
 // Script to handle form submission and generate output dynamically
 document.getElementById('reportForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Prevent form from resetting
 
     // Collect form data
     const formData = {
@@ -21,8 +21,7 @@ document.getElementById('reportForm').addEventListener('submit', function (event
         time: document.getElementById('time').value,
         location: document.getElementById('location').value,
         targetAudience: document.getElementById('targetAudience').value,
-        objectives: document.getElementById('object ```javascript
-        objectives').value,
+        objectives: document.getElementById('objectives').value,
         activities: document.getElementById('activities').value,
         strengths: document.getElementById('strengths').value,
         weaknesses: document.getElementById('weaknesses').value,
@@ -73,6 +72,10 @@ document.getElementById('reportForm').addEventListener('submit', function (event
 // Add functionality to download the report as a PDF
 document.getElementById('downloadPdfBtn').addEventListener('click', function () {
     const element = document.getElementById('output');
+    const progress = document.getElementById('progress');
+    
+    // Show progress message
+    progress.style.display = 'block';
 
     // Options for the PDF generation
     const options = {
@@ -84,5 +87,11 @@ document.getElementById('downloadPdfBtn').addEventListener('click', function () 
     };
 
     // Generate the PDF
-    html2pdf().set(options).from(element).save();
+    html2pdf().set(options).from(element).save().then(() => {
+        // Hide progress message after PDF generation
+        progress.style.display = 'none';
+    }).catch(err => {
+        console.error('Error generating PDF:', err);
+        progress.style.display = 'none'; // Hide progress on error
+    });
 });
