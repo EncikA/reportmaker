@@ -16,7 +16,8 @@ document.getElementById('reportForm').addEventListener('submit', function (event
 
     // Collect form data
     const formData = {
-        programName: document.getElementById('programName').value,
+        programName ```javascript
+: document.getElementById('programName').value,
         date: document.getElementById('date').value, // Keep the date as dd/mm/yyyy
         time: document.getElementById('time').value,
         location: document.getElementById('location').value,
