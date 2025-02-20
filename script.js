@@ -20,8 +20,9 @@ document.getElementById('reportForm').addEventListener('submit', function (event
         date: document.getElementById('date').value, // Keep the date as dd/mm/yyyy
         time: document.getElementById('time').value,
         location: document.getElementById('location').value,
-        targetAudience: document.get ElementById('targetAudience').value,
-        objectives: document.getElementById('objectives').value,
+        targetAudience: document.getElementById('targetAudience').value,
+        objectives: document.getElementById('object ```javascript
+        objectives').value,
         activities: document.getElementById('activities').value,
         strengths: document.getElementById('strengths').value,
         weaknesses: document.getElementById('weaknesses').value,
@@ -82,8 +83,6 @@ document.getElementById('downloadPdfBtn').addEventListener('click', function () 
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
-    // Generate the PDF after a short delay to ensure content is rendered
-    setTimeout(() => {
-        html2pdf().set(options).from(element).save();
-    }, 100); // Delay to ensure rendering is complete
+    // Generate the PDF
+    html2pdf().set(options).from(element).save();
 });
